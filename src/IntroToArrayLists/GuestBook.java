@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.plaf.ActionMapUIResource;
 
 public class GuestBook implements ActionListener{
 	// Create a GUI with two buttons. One button reads "Add Name" and the other
@@ -18,6 +19,7 @@ public class GuestBook implements ActionListener{
 	JButton buttonToAddName = new JButton();
 	JButton buttonToViewName = new JButton();
 	JPanel panel = new JPanel();
+	int nameNumber = 1;
 	ArrayList<String> namesList = new ArrayList<String>();
 public static void main(String[]args)
 {
@@ -52,10 +54,14 @@ public static void main(String[]args)
 		if (e.getSource() == buttonToAddName) {
 			String name = JOptionPane.showInputDialog("Enter a name");
 			namesList.add(name);
+			nameNumber++;
 		}
 		if (e.getSource() == buttonToViewName) {
-			System.out.println(namesList);
+			String actualNamesList = "";
+			for (int i = 0; i < namesList.size(); i++) {
+				actualNamesList += "Guest #" + (i+1) + ": " + namesList.get(i) + "\n";
+			}
+			JOptionPane.showMessageDialog(null, actualNamesList);
 		}
-		
 	}
 }
