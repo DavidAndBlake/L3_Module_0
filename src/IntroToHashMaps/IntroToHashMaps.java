@@ -13,7 +13,10 @@ public class IntroToHashMaps {
 			roots.put(i, Math.sqrt(i));
 			System.out.println(i);
 		}
-	
+		for (int i = 0; i < 500; i++) {
+			Double d = roots.get(i);
+			System.out.println("The square Root of " + i + " is " + d);
+		}
 	
 	
 	}
