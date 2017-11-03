@@ -5,6 +5,7 @@ import java.util.HashMap;
 import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 public class IntroToHashMaps {
+	HashMap<Integer, Double> roots = new HashMap<Integer, Double>();
 	//1. Create a HashMap called roots with Integers for the keys and Doubles for the values.
 	//2. Using a for-loop, add 500 entries to your HashMap. The key entry will be the 
 	public static void main(String[] args) {
