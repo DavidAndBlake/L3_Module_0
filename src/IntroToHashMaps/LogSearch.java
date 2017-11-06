@@ -1,22 +1,52 @@
 package IntroToHashMaps;
 
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class LogSearch {
-  HashMap<Integer, String> hashbrown = new HashMap<Integer, String>();
-  JFrame frame = new JFrame();
-  JPanel panel = new JPanel();
-  JButton button1 = new JButton();
-  JButton button2 = new JButton();
-  JButton button3 = new JButton();
-  public static void main(String[] args) {
+public class LogSearch implements ActionListener{
+	HashMap<Integer, String> hashbrown = new HashMap<Integer, String>();
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton button1 = new JButton();
+	JButton button2 = new JButton();
+	JButton button3 = new JButton();
+	int IDinteger;
+
+	public static void main(String[] args) {
+		LogSearch Log = new LogSearch();
+		Log.gui();
+	}
+  public void gui(){
+	  frame.setVisible(true);
+	  frame.add(button1);
+	  frame.add(button2);
+	  frame.add(button3);
+	 
+	  button1.addActionListener((ActionListener) this);
+	  button2.addActionListener((ActionListener) this);
+	  button3.addActionListener((ActionListener) this);
+	  
+	
+		
+	}
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	  if (e.getSource() == button1) {
+		  String enterID = JOptionPane.showInputDialog("Please enter an ID number");
+		  IDinteger = Integer.parseInt(enterID);
+		  String enterName = JOptionPane.showInputDialog("Enter a name");
+		  hashbrown.put(IDinteger, enterName);
+		}
+	
 }
-  
   
 	/* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
