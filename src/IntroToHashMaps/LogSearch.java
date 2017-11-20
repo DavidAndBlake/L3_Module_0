@@ -32,6 +32,9 @@ public class LogSearch implements ActionListener {
 		panel.add(button1);
 		panel.add(button2);
 		panel.add(button3);
+		button1.setText("Add Entry");
+		button2.setText("Seach ID");
+		button3.setText("View List");
 		button1.addActionListener((ActionListener) this);
 		button2.addActionListener((ActionListener) this);
 		button3.addActionListener((ActionListener) this);
