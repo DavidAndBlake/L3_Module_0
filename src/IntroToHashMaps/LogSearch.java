@@ -51,6 +51,9 @@ public class LogSearch implements ActionListener {
 			String enterName = JOptionPane.showInputDialog("Enter a name");
 			hashbrown.put(IDinteger, enterName);
 		}
+		if (e.getSource() == button2) {
+			JOptionPane.showInputDialog("Enter a name to search");
+		}
 
 	}
 
