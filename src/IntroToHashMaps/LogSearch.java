@@ -52,7 +52,10 @@ public class LogSearch implements ActionListener {
 			hashbrown.put(IDinteger, enterName);
 		}
 		if (e.getSource() == button2) {
-			JOptionPane.showInputDialog("Enter a name to search");
+			String searchID = JOptionPane.showInputDialog("Enter an ID to search");
+			if (Integer.parseInt(searchID) == (IDinteger)) {
+				JOptionPane.showMessageDialog(null, hashbrown);
+			}
 		}
 
 	}
