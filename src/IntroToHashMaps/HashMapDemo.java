@@ -21,7 +21,7 @@ public class HashMapDemo {
 		for(String s : studentRoster.values()){
 			System.out.println(s);
 		}
-		
+		       
 		System.out.println("\nAll the keys:");
 		for(Integer i : studentRoster.keySet()){
 			System.out.println(i);

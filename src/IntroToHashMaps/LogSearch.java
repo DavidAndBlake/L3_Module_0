@@ -1,7 +1,10 @@
 package IntroToHashMaps;
 
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -54,6 +57,15 @@ public class LogSearch implements ActionListener {
 		if (e.getSource() == button2) {
 			String searchID = JOptionPane.showInputDialog("Enter an ID to search");
 			JOptionPane.showMessageDialog(null, hashbrown.get(Integer.parseInt(searchID)));
+		}
+		if (e.getSource() == button3) {
+			String finalString="";
+			
+			Collection<Integer>list = hashbrown.keySet();
+			for (Integer each: list) {
+				finalString += "id:" + each + " = " + "name " + hashbrown.get(each);
+			}
+			JOptionPane.showMessageDialog(null, finalString);
 		}
 	}
 
