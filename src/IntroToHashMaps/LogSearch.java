@@ -63,7 +63,7 @@ public class LogSearch implements ActionListener {
 			
 			Collection<Integer>list = hashbrown.keySet();
 			for (Integer each: list) {
-				finalString += "id:" + each + " = " + "name " + hashbrown.get(each);
+				finalString += "id:" + each + " = " + "name " + hashbrown.get(each) + "  ";
 			}
 			JOptionPane.showMessageDialog(null, finalString);
 		}
