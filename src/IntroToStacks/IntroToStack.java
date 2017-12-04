@@ -16,9 +16,11 @@ public class IntroToStack {
 			System.out.println(Math.random()*100);
 		}
 		//3. Ask the user to enter in two numbers between 0 and 100, inclusive. 
-		JOptionPane.showInputDialog("Enter a random number between 0 and 100");
+		String firstNumber = JOptionPane.showInputDialog("Enter a number between 0 and 100");
+		String secondNumber = JOptionPane.showInputDialog("Enter in a second number between 0 and 100");
 		//4. Pop all the elements off of the Stack. Every time a double is popped that is
 		//   between the two numbers entered by the user, print it to the screen.
+		
 		
 		//   EXAMPLE:
 		//   NUM 1: 65
