@@ -44,6 +44,12 @@ public class TextUndoRedo implements KeyListener {
 		// TODO Auto-generated method stub
 
 		label.setText(label.getText() + e.getKeyChar());
+		if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE)
+		{
+			label.getText());
+			//String newText = label.getText();
+			//newText = newText.substring(0, newTextLength()-1);
+		}
 	}
 
 	@Override
