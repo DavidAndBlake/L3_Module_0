@@ -1,5 +1,6 @@
 package IntroToStacks;
 
+import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Stack;
@@ -10,9 +11,11 @@ import javax.swing.JPanel;
 
 public class TextUndoRedo implements KeyListener {
 	Stack<String> deleted = new Stack<String>();
+
 	public TextUndoRedo() {
 		frame.add(panel);
 		panel.add(label);
+		panel.setPreferredSize(new Dimension(100, 100));
 		frame.setVisible(true);
 		frame.addKeyListener(this);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
@@ -44,21 +47,24 @@ public class TextUndoRedo implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		frame.pack();
-		label.setText(label.getText() + e.getKeyChar());
-		
+
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		deleted.add(label.getText().substring(0, label.getText().length()-2));
+
 		if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-			label.setText(label.getText().substring(0, label.getText().length()-2));
+			deleted.add("" + label.getText().charAt(label.getText().length() - 1));
+			label.setText(label.getText().substring(0, label.getText().length() - 1));
 			System.out.println(deleted);
 			// String newText = label.getText();
 			// newText = newText.substring(0, newTextLength()-1);
+		} else {
+			label.setText(label.getText() + e.getKeyChar());
 		}
+
+		frame.pack();
 	}
 
 	@Override
