@@ -60,7 +60,12 @@ public class TextUndoRedo implements KeyListener {
 			System.out.println(deleted);
 			// String newText = label.getText();
 			// newText = newText.substring(0, newTextLength()-1);
-		} else {
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			label.setText(label.getText() + deleted.pop());
+		}
+		else {
 			label.setText(label.getText() + e.getKeyChar());
 		}
 
